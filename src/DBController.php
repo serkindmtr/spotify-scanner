@@ -25,7 +25,7 @@ final class DBController
 
         if (false === $result->fetchArray()) {
             $this->DB->exec("CREATE TABLE $playlistName (artist TEXT, name TEXT, ts INT)");
-            $this->DB->exec("CREATE UNIQUE INDEX unq_song ON $playlistName (artist, name)");
+            $this->DB->exec("CREATE UNIQUE INDEX {$playlistName}_artist_name_idx ON $playlistName (artist, name)");
         }
 
         $ts = time();
