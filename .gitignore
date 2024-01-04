@@ -1,1 +1,4 @@
 /.vscode
+.idea
+/src/db/
+.DS_Store
